@@ -1,5 +1,7 @@
-require "helpr/version"
+require_relative 'helpr/version'
 
 module Helpr
-  # Your code goes here...
+  class Helpr
+    attr_accessor :top
+  end
 end
