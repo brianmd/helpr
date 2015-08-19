@@ -1,11 +1,20 @@
 require 'spec_helper'
 
-describe Helpr do
-  it 'has a version number' do
-    expect(Helpr::VERSION).not_to be nil
+module TestHelp
+  def test1
+    'help for test1'
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  def test2
+    'help for test2'
+  end
+end
+
+describe Helpr::Helpr do
+  let(:helper) { Helpr::Helpr.new }
+
+  it 'accepts top help' do
+    helper.top = 'top help'
+    expect(helper.top).to eq('top help')
   end
 end
