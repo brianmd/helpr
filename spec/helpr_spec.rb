@@ -68,9 +68,12 @@ describe Helpr::Help do
       expect(help.topics).to eq([:test, :note])
     end
 
-    xit 'note should have three subtopics' do
-      expect(help['note'].topics).to eq(['note 1', 'note 2', 'note 3'])
-      expect(help[:note].topics).to eq(['note 1', 'note 2', 'note 3'])
+    it 'note should have three subtopics' do
+      expect(help.topics(['note'])).to eq([:'1', :'2', :'3'])
+    end
+
+    it 'note (as symbol) should have three subtopics' do
+      expect(help.topics([:note])).to eq([:'1', :'2', :'3'])
     end
   end
 end
