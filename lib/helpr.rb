@@ -5,16 +5,16 @@ module Helpr
     attr_accessor :top
     
     def add(name, text)
-      self[name.to_sym] = text
+      self[name] = text
       tokens = name.split(' ')
     end
 
     def [](name)
-      help[name]
+      help[name.to_sym]
     end
 
     def []=(name, val)
-      help[name] = val
+      help[name.to_sym] = val
     end
 
     def help

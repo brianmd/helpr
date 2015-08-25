@@ -56,7 +56,7 @@ describe Helpr::Help do
       expect(help['test 1']).to eq('this is test 1')
     end
 
-    xit 'should have test 2' do
+    it 'should have test 2' do
       expect(help['test 2']).to eq('this is test 2')
     end
 
