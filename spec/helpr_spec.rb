@@ -60,12 +60,12 @@ describe Helpr::Help do
       expect(help['test 2']).to eq('this is test 2')
     end
 
-    xit 'should have test 2 as a symbol' do
+    it 'should have test 2 as a symbol' do
       expect(help[:'test 2']).to eq('this is test 2')
     end
 
-    xit 'should have two topics' do
-      expect(help.topics).to eq(['test', 'note'])
+    it 'should have two topics' do
+      expect(help.topics).to eq([:test, :note])
     end
 
     xit 'note should have three subtopics' do

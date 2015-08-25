@@ -6,7 +6,7 @@ module Helpr
     
     def add(name, text)
       self[name] = text
-      tokens = name.split(' ')
+      topics(name.split(' '))
     end
 
     def [](name)
@@ -21,8 +21,29 @@ module Helpr
       @help ||= Hash.new
     end
 
-    def topic_hierarchy
+    def topics(keys=nil)
+      result = if keys.nil?
+                 hierarchy
+               else
+                 topics_aux(keys, hierarchy)
+               end
+      result.keys
+    end
 
+    def topics_aux(keys, hier)
+      key = keys.shift.to_sym
+      hier = hier.fetch(key) do
+        hier[key] = {}
+      end
+      if keys.empty?
+        hier
+      else
+        topics_aux(keys, hier)
+      end
+    end
+
+    def hierarchy
+      @hierarchy ||= Hash.new
     end
   end
 end
