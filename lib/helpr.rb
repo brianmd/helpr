@@ -31,7 +31,11 @@ module Helpr
     end
 
     def topics_aux(keys, hier)
-      key = keys.shift.to_sym
+      key = if keys.empty?
+              ''
+              else
+                keys.shift.to_sym
+              end
       hier = hier.fetch(key) do
         hier[key] = {}
       end
