@@ -1,40 +1,5 @@
 require_relative 'spec_helper'
 
-#     call a module method without including it:
-# Xyz.instance_method(:c).bind(self).call
-#
-#     what this needs though is this:
-# z = Class.new.send(:include, Xyz).new
-# z.c    OR   z.send(:c)
-
-module TestHelp
-  def main
-    "help main. Topics include: #{self.topics}"
-  end
-
-  def test1
-    'help for test1'
-  end
-
-  def test2
-    'help for test2'
-  end
-end
-
-module TestHelp2
-  def main
-    "help2 main. Topics include: #{self.topics}"
-  end
-
-  def test1
-    'help2 for test1'
-  end
-
-  def test2
-    'help2 for test2'
-  end
-end
-
 describe Helpr::Help do
   let(:help) { Helpr::Help.new }
 
